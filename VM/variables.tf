@@ -25,9 +25,10 @@ variable "zone" {
   type = string
   default = "asia-east2-a"
 }
+
 variable "vm-tag" {
-  type = string
-  default = "test_vm"
+  type = list(string)
+  default = ["test-vm"]
 }
 variable "boot-disk-size" {
   type = number
