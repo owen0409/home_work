@@ -15,6 +15,7 @@ data "google_compute_image" "image" {
 resource "google_compute_address" "static" {
   project = var.project_id
   name = "ipv4-address"
+  region = "asia-east2"
 }
 
 resource "google_compute_instance" "test-host" {
