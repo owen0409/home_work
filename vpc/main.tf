@@ -31,5 +31,5 @@ resource "google_compute_firewall" "default" {
     ports    = ["80"]
   }
 
-  source_tags = ["test_vm"]
+  source_range = ["0.0.0.0/0"]
 }
