@@ -1,6 +1,9 @@
 provider "google-beta" {
   version = "~>2.14.0"
+}
 
+terraform {
+  backend "gcs" {}
 }
 
 data "google_compute_image" "image" {

@@ -1,6 +1,10 @@
 provider "google-beta" {
 }
 
+terraform {
+  backend "gcs" {}
+}
+
 resource "google_compute_network" "vpc_network" {
   project                 = var.project_id
   name                    = var.vpc_network_name
