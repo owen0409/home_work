@@ -13,6 +13,7 @@ resource "google_compute_instance" "test-host" {
   machine_type = var.machine-type
   name = var.host-name
   zone = var.zone
+  tag = var.vm-tag
 
   boot_disk {
     initialize_params {

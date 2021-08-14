@@ -25,6 +25,10 @@ variable "zone" {
   type = string
   default = "asia-east2-a"
 }
+variable "vm-tag" {
+  type = string
+  default = "test_vm"
+}
 variable "boot-disk-size" {
   type = number
   default = 100
