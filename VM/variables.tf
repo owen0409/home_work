@@ -21,6 +21,7 @@ variable "host-name" {
   type = string
   default = "test-vm-1"
 }
+
 variable "zone" {
   type = string
   default = "asia-east2-a"
