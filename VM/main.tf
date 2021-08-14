@@ -1,5 +1,6 @@
 provider "google-beta" {
   version = "~>2.14.0"
+  zone = var.zone
 }
 
 terraform {
@@ -13,7 +14,6 @@ data "google_compute_image" "image" {
 
 resource "google_compute_address" "static" {
   project = var.project_id
-  zone = var.zone
   name = "ipv4-address"
 }
 
