@@ -10,4 +10,4 @@ Tasks:\
 • Expose the nginx instance to the public web on port 80.\
 • Fetch the output of the nginx container’s default page.\
 • Excluding any html/code tags and symbols, output the word and it’s frequency count for the word that occurred the most on the default page.\
-• Demonstrate how you would log the resource usage of the container every 10 seconds.\
+• Demonstrate how you would log the resource usage of the container every 10 seconds.
