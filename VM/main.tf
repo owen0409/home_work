@@ -1,5 +1,6 @@
 provider "google-beta" {
   version = "~>2.14.0"
+
 }
 
 data "google_compute_image" "image" {
