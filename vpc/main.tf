@@ -23,6 +23,7 @@ resource "google_compute_subnetwork" "default" {
 
 
 resource "google_compute_firewall" "default" {
+  project                 = var.project_id
   name    = "test-firewall"
   network = google_compute_network.vpc_network.name
 
