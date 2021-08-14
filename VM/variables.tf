@@ -41,15 +41,15 @@ variable "network-ip" {
   type = string
   default = "10.1.1.2"
 }
-variable "disk-name" {
-  type = string
-  default = "test-vm-disk-1"
-}
-variable "disk-type" {
-  type = string
-  default = "pd-standard"
-}
-variable "disk-size" {
-  type = number
-  default = 100
-}
+//variable "disk-name" {
+//  type = string
+//  default = "test-vm-disk-1"
+//}
+//variable "disk-type" {
+//  type = string
+//  default = "pd-standard"
+//}
+//variable "disk-size" {
+//  type = number
+//  default = 100
+//}
