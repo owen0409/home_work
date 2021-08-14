@@ -11,6 +11,10 @@ data "google_compute_image" "image" {
   project = var.image-project
 }
 
+resource "google_compute_address" "static" {
+  name = "ipv4-address"
+}
+
 resource "google_compute_instance" "test-host" {
   project = var.project_id
   machine_type = var.machine-type
@@ -29,6 +33,9 @@ resource "google_compute_instance" "test-host" {
   network_interface {
     subnetwork = var.subnet
     network_ip = var.network-ip
+    access_config {
+      nat_ip = google_compute_address.static.address
+    }
   }
 
   metadata = {
