@@ -16,7 +16,7 @@ resource "google_compute_network" "default" {
 resource "google_compute_subnetwork" "default" {
   project                 = var.project_id
   name          = "test-subnet"
-  ip_cidr_range = "10.170.0.0/24"
+  ip_cidr_range = "10.128.0.0/20"
   region        = "asia-east2"
   network       = google_compute_network.default.id
 }
