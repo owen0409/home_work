@@ -5,12 +5,12 @@ variable "project_id" {
 
 variable "image-test" {
   type = string
-  default = "gce-uefi-images"
+  default = "image-centos7"
 }
 
 variable "image-project" {
   type = string
-  default = "centos-7"
+  default = "organic-cat-322902"
 }
 
 variable "machine-type" {
@@ -19,7 +19,7 @@ variable "machine-type" {
 }
 variable "host-name" {
   type = string
-  default = "test_vm_1"
+  default = "test-vm-1"
 }
 variable "zone" {
   type = string
@@ -43,7 +43,7 @@ variable "network-ip" {
 }
 variable "disk-name" {
   type = string
-  default = test_vm_1
+  default = "test-vm-disk-1"
 }
 variable "disk-type" {
   type = string

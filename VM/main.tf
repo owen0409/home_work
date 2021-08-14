@@ -1,4 +1,5 @@
 provider "google-beta" {
+  version = "~>2.14.0"
 }
 
 data "google_compute_image" "image" {
@@ -14,7 +15,7 @@ resource "google_compute_instance" "test-host" {
 
   boot_disk {
     initialize_params {
-      image = data.google_compute_image.image.id
+      image = data.google_compute_image.image.self_link
       size = var.boot-disk-size
       type = var.boot-disk-type
     }
@@ -29,23 +30,22 @@ resource "google_compute_instance" "test-host" {
     VmDnsSetting = "GlobalOnly"
   }
 
-
-  lifecycle {
-    ignore_changes = [attached_disk]
-  }
+//  lifecycle {
+//    ignore_changes = [attached_disk]
+//  }
 }
 
-resource "google_compute_disk" "test-disk" {
-  project = var.project_id
-  name = var.disk-name
-  type = var.disk-type
-  size = var.disk-size
-  zone = var.zone
-  physical_block_size_bytes = 4096
-}
-
-resource "google_compute_attached_disk" "default" {
-  project = var.project_id
-  disk = google_compute_disk.test-disk.id
-  instance = google_compute_instance.test-host.id
-}
+//resource "google_compute_disk" "test-disk" {
+//  project = var.project_id
+//  name = var.disk-name
+//  type = var.disk-type
+//  size = var.disk-size
+//  zone = var.zone
+//  physical_block_size_bytes = 4096
+//}
+//
+//resource "google_compute_attached_disk" "default" {
+//  project = var.project_id
+//  disk = google_compute_disk.test-disk.self_link
+//  instance = google_compute_instance.test-host.self_link
+//}
