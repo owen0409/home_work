@@ -31,6 +31,11 @@ resource "google_compute_instance" "test-host" {
     VmDnsSetting = "GlobalOnly"
   }
 
+  metadata_startup_script = "${file("${path.module}/script/test.sh")}"
+
+
+
+
 //  lifecycle {
 //    ignore_changes = [attached_disk]
 //  }
