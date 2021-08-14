@@ -1,6 +1,5 @@
-provider "google" {
-  project     = var.project_id
-  ##region      = "us-central1"
+provider "google-beta" {
+  version = "~> 2.14.0"
 }
 
 resource "google_compute_network" "vpc_network" {
