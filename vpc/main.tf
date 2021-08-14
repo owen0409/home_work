@@ -7,3 +7,14 @@ resource "google_compute_network" "vpc_network" {
   auto_create_subnetworks = true
   mtu                     = 1460
 }
+
+resource "google_compute_network" "default" {
+  name = "test-network"
+}
+
+resource "google_compute_subnetwork" "default" {
+  name          = "test-subnet"
+  ip_cidr_range = "10.170.0.0/24"
+  region        = "asia-east2"
+  network       = google_compute_network.default.id
+}
