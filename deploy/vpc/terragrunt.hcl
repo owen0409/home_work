@@ -1,5 +1,5 @@
 terraform {
-  source = "../../../vpc"
+  source = "../../vpc"
 }
 
 include {
