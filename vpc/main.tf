@@ -8,15 +8,11 @@ resource "google_compute_network" "vpc_network" {
   mtu                     = 1460
 }
 
-resource "google_compute_network" "default" {
-  project                 = var.project_id
-  name = "test-network"
-}
 
 resource "google_compute_subnetwork" "default" {
   project                 = var.project_id
   name          = "test-subnet"
-  ip_cidr_range = "10.128.0.0/20"
+  ip_cidr_range = "10.1.1.0/24"
   region        = "asia-east2"
-  network       = google_compute_network.default.id
+  network       = google_compute_network.vpc_network.id
 }
