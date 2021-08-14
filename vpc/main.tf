@@ -1,6 +1,4 @@
-provider "google" {
-  project     = "organic-cat-322902"
-  region      = "us-west1"
+provider "google-beta" {
 }
 
 resource "google_compute_network" "vpc_network" {
