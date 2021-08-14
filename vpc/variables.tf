@@ -4,5 +4,5 @@ variable "project_id" {
 }
 variable "vpc_network_name" {
   type = string
-  default = "test_vpc"
+  default = "test-vpc"
 }
