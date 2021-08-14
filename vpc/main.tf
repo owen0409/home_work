@@ -9,6 +9,7 @@ resource "google_compute_network" "vpc_network" {
 }
 
 resource "google_compute_network" "default" {
+  project                 = var.project_id
   name = "test-network"
 }
 
