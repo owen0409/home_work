@@ -12,25 +12,9 @@ echo \
 "FROM nginx
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
 HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://localhost/ || exit 1" > /root/Dockerfile
-sudo docker build -t nginx:v1 -f /root/Dockerfile .
-sudo docker run -d --name nginx -p 80:80 nginx:v1
+docker build -t nginx:v1 -f /root/Dockerfile . > build.log
+docker run -d --name nginx -p 80:80 nginx:v1 > start.log
 
-
-# sudo su -
-# mkdir monitor && cd monitor
-# echo "#!/bin/bash" >> monitor_docker.sh
-# echo "date >> /root/monitor/monitor.log" >> monitor_docker.sh
-# echo "docker stats --no-stream >> /root/monitor/monitor.log" >> monitor_docker.sh
-# chmod 755 monitor_docker.sh
-#
-# echo "#!/bin/bash" >> schedule_monitor.sh
-# echo "for((i=1;i<=10;i++));do" >> schedule_monitor.sh
-# echo "/root/monitor/monitor_docker.sh 2>/dev/null &" >> schedule_monitor.sh
-# echo "sleep 10" >> schedule_monitor.sh
-# echo "done" >> schedule_monitor.sh
-# chmod 755 schedule_monitor.sh
-#
-# echo "* * * * * /root/monitor/schedule_monitor.sh" >> /var/spool/cron/root
 
 #monitor_docker
 echo \
