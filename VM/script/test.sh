@@ -11,9 +11,9 @@ sleep 10
 echo \
 "FROM nginx
 RUN apt-get update && apt-get install -y curl && rm -rf /var/lib/apt/lists/*
-HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://localhost/ || exit 1" > ~/Dockerfile
+HEALTHCHECK --interval=5s --timeout=3s CMD curl -fs http://localhost/ || exit 1" > Dockerfile
 docker build -t nginx:v1 .
-sudo docker run -d --name nginx -p 80:80 nginx:v1
+docker run -d --name nginx -p 80:80 nginx:v1
 
 
 # sudo su -
