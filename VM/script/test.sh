@@ -30,7 +30,7 @@ scrape_configs:
       - targets: ['localhost:9090']
   - job_name: 'docker'
     static_configs:
-      - targets: ['localhost:9104']" > /root/prometheus.yml
+      - targets: ['10.1.1.2:9104']" > /root/prometheus.yml
 docker run -d -p 9104:9104 -v /sys/fs/cgroup:/cgroup -v /var/run/docker.sock:/var/run/docker.sock prom/container-exporter
 docker run  -d -p 9090:9090 -v /root/prometheus.yml:/etc/prometheus/prometheus.yml --name prometheus prom/prometheus --config.file=/etc/prometheus/prometheus.yml
 docker run -d -p 3000:3000 --name grafana grafana/grafana:6.5.0
